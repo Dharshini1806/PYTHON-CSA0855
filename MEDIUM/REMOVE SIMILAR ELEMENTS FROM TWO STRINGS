@@ -1,0 +1,12 @@
+def remove_common_words(s1, s2):
+    set1 = set(s1.split())
+    set2 = set(s2.split())
+    common_words = set1.intersection(set2)
+    modified_s1 = ' '.join(word for word in s1.split() if word not in common_words)
+    modified_s2 = ' '.join(word for word in s2.split() if word not in common_words)
+    return modified_s1, modified_s2
+s1 = input("Enter the first sentence: ")
+s2 = input("Enter the second sentence: ")
+result_s1, result_s2 = remove_common_words(s1, s2)
+print("Modified Sentence 1:", result_s1)
+print("Modified Sentence 2:", result_s2)
